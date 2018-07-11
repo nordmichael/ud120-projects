@@ -39,7 +39,7 @@ labels_train = labels_train[:len(labels_train)/100]
 
 print "\n\nBeginning to Train Model"
 t0 = time()
-svrLin = svm.SVC(kernel ='linear', C=1.0)  #Switched to using SVC from SVR
+svrLin = svm.SVC(kernel ='rbf', C=10000.0)  #Switched to using SVC from SVR
     #This cut processing time down by roughly 1000%
 svrModel = svrLin.fit(features_train,labels_train) #Fit/Train Model
 t1 = time()
