@@ -33,7 +33,8 @@ from time import time
 
 print "\n\nBeginning to Train Model"
 t0 = time()
-svrLin = svm.SVC(kernel ='linear', C=1.0)  #Define model as linear SVM
+svrLin = svm.SVC(kernel ='linear', C=1.0)  #Switched to using SVC from SVR
+    #This cut processing time down by roughly 1000%
 svrModel = svrLin.fit(features_train,labels_train) #Fit/Train Model
 t1 = time()
 print "Training model took: ", t1-t0, " Seconds"
