@@ -13,3 +13,4 @@ We can add features to make a dataset linearly seperable (E.g quadratic or polar
 SVM Parameters:
   Kernel
   Gamma
+  C
