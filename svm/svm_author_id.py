@@ -45,7 +45,7 @@ score = accuracy_score(labels_test,predictions) #Get Accuracy
 print "Accuracy is: ", score
 
 #Added Feature to show stuff, not required
-plt.plot(features_test,labels_test, color='c',lw=lw, label = 'Linear Fit')
+plt.plot(features_test,labels_test, color='c', label = 'Linear Fit')
 plt.xlabel('data')
 plt.ylable('target')
 plt.title('Regressions')
