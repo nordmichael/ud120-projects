@@ -10,4 +10,6 @@ Need methods fit(features,labels) and predict(features) [returns labels]
 We can add features to make a dataset linearly seperable (E.g quadratic or polar coordinates)
   See kernel functions http://scikit-learn.org/stable/modules/svm.html#kernel-functions
 
-  
+SVM Parameters:
+  Kernel
+  Gamma
