@@ -1,13 +1,13 @@
 #!/usr/bin/python
 
-""" 
+"""
     This is the code to accompany the Lesson 2 (SVM) mini-project.
 
-    Use a SVM to identify emails from the Enron corpus by their authors:    
+    Use a SVM to identify emails from the Enron corpus by their authors:
     Sara has label 0
     Chris has label 1
 """
-    
+
 import sys
 from time import time
 sys.path.append("../tools/")
@@ -21,10 +21,34 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 
 
-
+import numpy as np
+import matplotlib.pyplot as plt
 #########################################################
 ### your code goes here ###
 
+from sklearn.svm import SVR
+from sklearn import svm #Trying this as an alternative
+from sklearn.metrics import accuracy_score
+from time import time
+
+print "\n\nBeginning to Train Model"
+t0 = time()
+svrLin = svm.SVC(kernel ='linear', C=1.0)  #Define model as linear SVM
+svrModel = svrLin.fit(features_train,labels_train) #Fit/Train Model
+t1 = time()
+print "Training model took: ", t1-t0, " Seconds"
+
+predictions = svrModel.predict(features_test) #Predict system
+score = accuracy_score(labels_test,predictions) #Get Accuracy
+
+print "Accuracy is: ", score
+
+#Added Feature to show stuff, not required
+plt.plot(features_test,labels_test, color='c',lw=lw, label = 'Linear Fit')
+plt.xlabel('data')
+plt.ylable('target')
+plt.title('Regressions')
+plt.legend()
+plt.show()
+print "Program End"
 #########################################################
-
-
