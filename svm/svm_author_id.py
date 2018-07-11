@@ -52,7 +52,7 @@ print "Accuracy is: ", score
 
 sumChris = 0
 sumNat
-for each element in predictions:
+for element in predictions:
     if (element == 1):
         sumChris += 1
     else:
