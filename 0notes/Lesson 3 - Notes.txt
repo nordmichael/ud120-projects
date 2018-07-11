@@ -1,3 +1,13 @@
 #Lesson 3 - Notes.txt
-
+#SVM Reference http://scikit-learn.org/stable/modules/svm.html
 SVM  = support vector machine
+Margin is distance between line and nearest point between classes,
+  Maximizing margin can help to find best fit line
+  Syntax is more or less the same as any of the other methods we used for naive_bayes
+
+Need methods fit(features,labels) and predict(features) [returns labels]
+
+We can add features to make a dataset linearly seperable (E.g quadratic or polar coordinates)
+  See kernel functions http://scikit-learn.org/stable/modules/svm.html#kernel-functions
+
+  
