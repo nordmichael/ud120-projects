@@ -53,7 +53,7 @@ print "Accuracy is: ", score
 #Added Feature to show stuff, not required
 plt.plot(features_test,labels_test, color='c', label = 'Linear Fit')
 plt.xlabel('data')
-plt.ylable('target')
+plt.ylabel('target')
 plt.title('Regressions')
 plt.legend()
 plt.show()
