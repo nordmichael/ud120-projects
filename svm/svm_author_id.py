@@ -51,7 +51,7 @@ score = accuracy_score(labels_test,predictions) #Get Accuracy
 print "Accuracy is: ", score
 
 sumChris = 0
-sumNat
+sumNat = 0
 for element in predictions:
     if (element == 1):
         sumChris += 1
