@@ -33,8 +33,8 @@ from time import time
 
 
 #Add code to cut the training sets down to a more mnanagable size
-features_train = features_train[:len(features_train)/100]
-labels_train = labels_train[:len(labels_train)/100]
+#features_train = features_train[:len(features_train)/100]
+#labels_train = labels_train[:len(labels_train)/100]
 
 
 print "\n\nBeginning to Train Model"
@@ -50,9 +50,16 @@ score = accuracy_score(labels_test,predictions) #Get Accuracy
 
 print "Accuracy is: ", score
 
-print "SVM Result", predictions[10]
-print "SVM Result", predictions[26]
-print "SVM Result", predictions[50]
+sumChris = 0
+sumNat
+for each element in predictions:
+    if (element == 1):
+        sumChris += 1
+    else:
+        sumNat +=1
+print "Sum Chris: ", sumChris
+print "Sum Nat: ", sumNat
+
 #Added Feature to show stuff, not required
 #plt.plot(features_test,labels_test, color='c', label = 'Linear Fit')
 #plt.xlabel('data')
