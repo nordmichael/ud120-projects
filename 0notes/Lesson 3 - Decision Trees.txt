@@ -13,6 +13,10 @@ Useful other references:
   entropy = Pi*math.log(Pi,2)
 
 
-If you're scipy-literate, you can also turn a calculation like this into a two-liner: 
+If you're scipy-literate, you can also turn a calculation like this into a two-liner:
   import scipy.stats
   print scipy.stats.entropy([2,1],base=2)
+
+
+#Internal mental note, Decision Tree may be a good first option for a
+  trading bot
