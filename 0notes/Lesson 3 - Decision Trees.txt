@@ -1,2 +1,8 @@
 #Lesson 3 - Decision Trees.txt
 #Decision Tree Reference http://scikit-learn.org/stable/modules/tree.html
+
+L3.8 has code to show our decision tree (useful reference)
+L3.12 Quiz also has code useful for future reference
+
+Decision tree will maximize information gain where:
+  information gain = entropy(parent) - [weighted avg]*entropy(children)
