@@ -10,3 +10,6 @@ Your algorithm choices are the following:
 k nearest neighbors
 random forest
 adaboost (sometimes also called boosted decision tree)
+
+
+#Decided to use random forrest estimator
