@@ -6,3 +6,13 @@ L3.12 Quiz also has code useful for future reference
 
 Decision tree will maximize information gain where:
   information gain = entropy(parent) - [weighted avg]*entropy(children)
+
+
+Useful other references:
+  import math
+  entropy = Pi*math.log(Pi,2)
+
+
+If you're scipy-literate, you can also turn a calculation like this into a two-liner: 
+  import scipy.stats
+  print scipy.stats.entropy([2,1],base=2)
