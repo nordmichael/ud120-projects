@@ -8,3 +8,13 @@
 
 #List of POI People and names:
   We compiled a list of all POI names (in ../final_project/poi_names.txt) and associated email addresses (in ../final_project/poi_email_addresses.py).
+
+#Enron Employees:
+CEO: Jeffrey Skilling
+Chairman: Kenneth L. Lay (Ken Lay)
+CFO: Andrew Stuart Fastow
+
+#Helper functions from the course creators.
+We’ve written some helper functions (featureFormat() and targetFeatureSplit()
+in tools/feature_format.py) that can take a list of feature names and the
+data dictionary, and return a numpy array.
