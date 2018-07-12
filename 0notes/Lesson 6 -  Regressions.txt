@@ -1,0 +1,21 @@
+#Lesson 6 -  Regressions.txt
+#References:
+  Linear Models: http://scikit-learn.org/stable/modules/linear_model.html
+
+
+#Regressions used for continuous output items
+
+
+#Basic linear regression fitting code
+from sklearn import linear_model
+reg = linear_model.LinearRegression()
+reg.fit(ages_train,net_worths_train)
+
+
+#More helpful linear regression functions
+#To predict values use: prediction = reg.predict([array_of_values])
+slope = reg.coef_
+intercept = reg.intercept_
+
+
+R-squared-score = reg.score(ages_test, net_worth_test)
