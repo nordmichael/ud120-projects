@@ -29,7 +29,7 @@ from sklearn.metrics import accuracy_score
 print "\n\nCreated Decision Tree Classifier"
 
 print "Number of Training Features: ", len(features_train[0])
-"""
+
 cls_40 = tree.DecisionTreeClassifier(min_samples_split=40)
 
 print "Beginning training data"
@@ -42,6 +42,6 @@ print "Calculating Accuracy"
 cls_40_accuracy = accuracy_score(labels_test,cls_40_labels)
 
 print "Decision Tree Class Accuracy: ", cls_40_accuracy
-"""
+
 
 #########################################################
