@@ -15,7 +15,6 @@ bumpy_fast = [features_train[ii][1] for ii in range(0, len(features_train)) if l
 grade_slow = [features_train[ii][0] for ii in range(0, len(features_train)) if labels_train[ii]==1]
 bumpy_slow = [features_train[ii][1] for ii in range(0, len(features_train)) if labels_train[ii]==1]
 
-
 #### initial visualization
 plt.xlim(0.0, 1.0)
 plt.ylim(0.0, 1.0)
@@ -24,21 +23,32 @@ plt.scatter(grade_slow, bumpy_slow, color = "r", label="slow")
 plt.legend()
 plt.xlabel("bumpiness")
 plt.ylabel("grade")
-plt.show()
+
 ################################################################################
-
-
-### your code here!  name your classifier object clf if you want the 
+### your code here!  name your classifier object clf if you want the
 ### visualization code (prettyPicture) to show you the decision boundary
 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+print "Started Fitting Data"
+clf = RandomForestClassifier(n_estimators=20 ,min_samples_split=15, max_features='log2')#, min_samples_leaf=4)
+clf = clf.fit(features_train,labels_train)
 
+print "Started Predictive Data"
+pred = clf.predict(features_test)
 
+print "Finished Prediction"
 
+predAccuracy = accuracy_score(labels_test,pred)
 
+print "Prediction is: ", predAccuracy,":1"
 
 
 
 try:
     prettyPicture(clf, features_test, labels_test)
 except NameError:
+    print "Error in drawing picture"
     pass
+
+plt.show()
