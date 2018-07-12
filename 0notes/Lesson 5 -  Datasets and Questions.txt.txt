@@ -1,0 +1,10 @@
+#Lesson 5 -  Datasets and Questions.txt
+#Referemces
+  #Pickle: https://docs.python.org/2.7/library/pickle.html
+  #Dictionary: https://docs.python.org/2.7/library/stdtypes.html?highlight=dictionary#dictionary-view-objects
+  #File Functions: https://docs.python.org/2.7/library/functions.html?highlight=file#file
+
+
+
+#List of POI People and names:
+  We compiled a list of all POI names (in ../final_project/poi_names.txt) and associated email addresses (in ../final_project/poi_email_addresses.py).
