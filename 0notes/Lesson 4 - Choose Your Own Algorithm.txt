@@ -1,0 +1,12 @@
+#Lesson 2 - Choose Your Own Algorithm
+#Reference
+  k nearest neighbors: http://scikit-learn.org/stable/modules/neighbors.html
+    http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+  random forest: http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+  adaboost: http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html#sklearn.ensemble.AdaBoostClassifier
+
+Your algorithm choices are the following:
+
+k nearest neighbors
+random forest
+adaboost (sometimes also called boosted decision tree)
