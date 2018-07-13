@@ -1,39 +1,6 @@
-#Lesson 9 -  Features Scaling.txt
-#References: http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html
+#Lesson 8 -  Clustering.txt
+#References: http://scikit-learn.org/stable/modules/clustering.html
+  #http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans
+#Begins the unsupervised learning methods (YAY!)
 
-#Min max scaling formula scaled = (x - x_min) / (x_max - x_min)
-
-#min/max scaling usage example
-
-#FROM sci-kit-learn like [0] in references
->>> from sklearn.preprocessing import MinMaxScaler
->>>
->>> data = [[-1, 2], [-0.5, 6], [0, 10], [1, 18]]
->>> scaler = MinMaxScaler()
->>> print(scaler.fit(data))
-MinMaxScaler(copy=True, feature_range=(0, 1))
->>> print(scaler.data_max_)
-[  1.  18.]
->>> print(scaler.transform(data))
-[[ 0.    0.  ]
- [ 0.25  0.25]
- [ 0.5   0.5 ]
- [ 1.    1.  ]]
->>> print(scaler.transform([[2, 2]]))
-[[ 1.5  0. ]]
-
-
-#Katies example (udacity)
-from sklearn.preprocessing import MinMaxScaler
-import numpy
-weights = numpy.array([[115.],[140.],[175.]]) #Expects floats
-scaler = MinMaxScaler()
-rescaled_weight = scaler.fit_transform(weights)
-print rescaled_weight
-
-
-#Scaler example (Can be found in k_means_cluster.py code now)
-from sklearn.preprocessing import MinMaxScaler
-all_scaler = MinMaxScaler()
-rescaled_features = all_scaler.fit_transform(finance_features)
-print all_scaler.transform([[200000,1000000,0]])
+#Algo for clustering: K-Means
