@@ -44,17 +44,19 @@ data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r")
 data_dict.pop("TOTAL", 0)
 
 """ Added code to display max and min values from exercised_stock_options where things """
+""" Modified code to take a more universal variable to pick max/min of other values"""
 min_value = 100000000
 max_value = 0
+interested_feature = "salary"#'exercised_stock_options'
 for label in data_dict:
-    if (data_dict[label]['exercised_stock_options'] != 'NaN') and (data_dict[label]['exercised_stock_options'] > 0):
+    if (data_dict[label][interested_feature] != 'NaN') and (data_dict[label][interested_feature] > 0):
         #print label, ":", data_dict[label]['exercised_stock_options']
-        if (data_dict[label]['exercised_stock_options'] > max_value):
-            max_value = data_dict[label]['exercised_stock_options']
-        if (data_dict[label]['exercised_stock_options'] < min_value):
-            min_value = data_dict[label]['exercised_stock_options']
-print max_value
-print min_value
+        if (data_dict[label][interested_feature] > max_value):
+            max_value = data_dict[label][interested_feature]
+        if (data_dict[label][interested_feature] < min_value):
+            min_value = data_dict[label][interested_feature]
+print interested_feature, "max: ", max_value
+print interested_feature, "min: ", min_value
 
 
 ### the input features we want to use
