@@ -1,4 +1,6 @@
 #Lesson 8 -  Clustering.txt
-#References:
-
+#References: http://scikit-learn.org/stable/modules/clustering.html
+  #http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans
 #Begins the unsupervised learning methods (YAY!)
+
+#Algo for clustering: K-Means
