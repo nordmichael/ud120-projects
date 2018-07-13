@@ -97,11 +97,7 @@ from sklearn.preprocessing import MinMaxScaler
 all_scaler = MinMaxScaler()
 rescaled_features = all_scaler.fit_transform(finance_features)
 print all_scaler.transform([[200000,1000000,0]])
-#print rescaled_features
-#rescaled_f1 = scaler_f1.fit_transform(new_ff1[0])
-#rescaled_f2 = scaler_f2.fit_transform(new_ff1[1])
-#print "Scaled Salary:", scaler_f1.transform(200000)
-#print "Scaled Stock Option:", scaler_f2.transform(200000)
+
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
