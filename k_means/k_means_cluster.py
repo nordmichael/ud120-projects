@@ -69,6 +69,9 @@ features_list = [poi, feature_1, feature_2, feature_3] #Added total payments
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
+#print "Printing finance features"
+#new_ff1 = map(list, zip(*finance_features))
+#print new_ff1
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to
@@ -88,6 +91,17 @@ from sklearn.cluster import KMeans
 kmeans = KMeans(n_clusters=2)
 pred = kmeans.fit(finance_features).predict(finance_features)
 
+
+"""Add Scaling here for now"""
+from sklearn.preprocessing import MinMaxScaler
+all_scaler = MinMaxScaler()
+rescaled_features = all_scaler.fit_transform(finance_features)
+print all_scaler.transform([[200000,1000000,0]])
+#print rescaled_features
+#rescaled_f1 = scaler_f1.fit_transform(new_ff1[0])
+#rescaled_f2 = scaler_f2.fit_transform(new_ff1[1])
+#print "Scaled Salary:", scaler_f1.transform(200000)
+#print "Scaled Stock Option:", scaler_f2.transform(200000)
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
