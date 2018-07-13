@@ -1,2 +1,42 @@
 #Lesson 10 -  Text Learning.txt
-#References:
+#References: http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
+
+#Will be using count vectorizer to handle a "Bag of Words" method
+
+
+#Katies example
+from sklearn.feature_extraction.text import CountVectorizer
+vectorizer = CountVectorizer()
+string1 = ""
+string2 = ""
+string3 = ""
+email_list = [string1,string2,string3]
+bag_of_words = vectorizer.fit(email_list)
+bag_of_words = vectorizer.transform(email_list)
+print bag_of_words
+print vectorizer.vocabulary_.get("Great")
+
+
+
+
+#Checking count of stopwords
+#First install NLTK libraries
+nltk. py -2 -m nltk.downloader popular
+py -2
+from nltk.corpus import stopwords
+sw = stopwords.words("english")
+
+
+#NOTE, need to add comment to the course for stopwords count, now at 179 in english
+
+
+#Stemming words:
+from nltk.stem.snowball import SnowballStemmer
+stemmer = SnowballStemmer("english")
+print stemmer.stem("responsivity")
+print stemmer.stem("response")
+
+
+TfIdf
+Term Frequency: How often something happens
+Inverse Document Frequency: Inverse preportionality of word use
