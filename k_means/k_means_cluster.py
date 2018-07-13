@@ -43,6 +43,19 @@ data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r")
 ### there's an outlier--remove it!
 data_dict.pop("TOTAL", 0)
 
+""" Added code to display max and min values from exercised_stock_options where things """
+min_value = 100000000
+max_value = 0
+for label in data_dict:
+    if (data_dict[label]['exercised_stock_options'] != 'NaN') and (data_dict[label]['exercised_stock_options'] > 0):
+        #print label, ":", data_dict[label]['exercised_stock_options']
+        if (data_dict[label]['exercised_stock_options'] > max_value):
+            max_value = data_dict[label]['exercised_stock_options']
+        if (data_dict[label]['exercised_stock_options'] < min_value):
+            min_value = data_dict[label]['exercised_stock_options']
+print max_value
+print min_value
+
 
 ### the input features we want to use
 ### can be any key in the person-level dictionary (salary, director_fees, etc.)
