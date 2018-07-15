@@ -6,6 +6,7 @@ import re
 import sys
 
 sys.path.append( "../tools/" )
+
 from parse_out_email_text import parseOutText
 
 """
@@ -43,19 +44,28 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         ### once everything is working, remove this line to run over full dataset
         temp_counter += 1
         if temp_counter < 200:
+
             path = os.path.join('..', path[:-1])
             print path
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
+            parsedText = parseOutText(email)
 
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
-
+            parsedText.replace("sara","")
+            parsedText.replace("shackleton","")
+            parsedText.replace("chris","")
+            parsedText.replace("germani","")
+            #print "ParsedText:\n", parsedText
+            word_data.append(parsedText)
             ### append the text to word_data
-
             ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
-
+            if name == "sara":
+                from_data.append(0)
+            elif name == "chris":
+                from_data.append(1)
 
             email.close()
 
@@ -63,6 +73,13 @@ print "emails processed"
 from_sara.close()
 from_chris.close()
 
+#Print out stuff as required
+pr_line = 152
+print "Word_data line:",pr_line,"contents is: ", word_data[152]
+print "From_data line:",pr_line,"contents is: ", from_data[152]
+
+
+#Prebuilt pickle function to dump list of authors and data
 pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
@@ -71,5 +88,6 @@ pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
 
 ### in Part 4, do TfIdf vectorization here
-
-
+from sklearn.feature_extraction.text import TfidfVectorizer
+transformer = TfidfVectorizer(stop_words=“english”)
+word_data_trans = transformer.fit_transform(word_data)

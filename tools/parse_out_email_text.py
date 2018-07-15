@@ -42,8 +42,7 @@ def parseOutText(f):
             stemmedWords += " "
 
         stemmedWords = stemmedWords[:-1]    #Clean out the last character, which is a space
-        words = stemmedWords + "."
-
+        words = stemmedWords
     return words
 
 
