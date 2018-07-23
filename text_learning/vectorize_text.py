@@ -41,12 +41,12 @@ temp_counter = 0
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         ### only look at first 200 emails when developing
-        ### once everything is working, remove this line to run over full dataset
+        ### once everything is working, remo ve this line to run over full dataset
         temp_counter += 1
-        if temp_counter < 200:
+        if 1: # temp_counter 1 < 200: #Commented out to run code on whole list
 
             path = os.path.join('..', path[:-1])
-            print path
+            #print path #Commented out to improve speed of running
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
@@ -84,10 +84,15 @@ pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
 
-
-
-
 ### in Part 4, do TfIdf vectorization here
 from sklearn.feature_extraction.text import TfidfVectorizer
-transformer = TfidfVectorizer(stop_words=“english”)
+transformer = TfidfVectorizer(stop_words="english")
 word_data_trans = transformer.fit_transform(word_data)
+
+#print transformer.get_feature_names()    #Don't really need to print an array of words anymore
+print "LENGTH: ", len(transformer.get_feature_names())
+word_list = transformer.get_feature_names()
+print "Word Number X: ",
+for index in range(0, len(word_list)):
+    if ((index >= (34597-20)) and (index < (34597+200))):
+        print "Index:", index, "Word: ", word_list[index]
